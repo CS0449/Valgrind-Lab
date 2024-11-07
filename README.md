@@ -7,11 +7,19 @@
 The [Valgrind tool suite](https://valgrind.org/) provides a number of debugging and profiling tools that help you make your programs faster and more correct. The most popular of these tools is called `Memcheck`. It can detect many memory-related errors that are common in C and C++ programs and that can lead to crashes and unpredictable behavior. This lab is meant to familiarize you with Valgrind so that you can use it for future projects while debugging.
 
 ## Introduction
-1. Login via SSH to `thoth.cs.pitt.edu`
+
+1. Connect to your Virtual Machine and ensure that "Valgrind" is installed. You can run `valgrind --version` to see if it is installed.
+	```shell-session
+	$ valgrind --version
+	valgrind-3.22.0
+	```
+  	If Valgrind is not installed, install it using the `apt` package manager:
+	```sh
+	sudo apt install valgrind
+	```
 
 2. Change directories to the one we created for the work for this class, and clone this repository.
-
-    ```
+  	```
 	git clone https://github.com/CS0449/Valgrind-Lab
 	```
 	The repository contains three C programs inside the `src` directory: `quick-start.c`, `very-buggy.c`, and `leak.c`. We will use these programs to demonstrate how to use Valgrind to detect memory errors.
@@ -25,7 +33,6 @@ The [Valgrind tool suite](https://valgrind.org/) provides a number of debugging 
 
 ## Part 1: Errors detected by Valgrind
 4. Follow the directions below while reading: [http://valgrind.org/docs/manual/mc-manual.html](http://valgrind.org/docs/manual/mc-manual.html). Focus on Section 4.2: Explanation of error messages from MemCheck.
-
 	```bash
   	gcc -g very-buggy.c -o ./very-buggy
   	valgrind --leak-check=full --track-origins=yes ./very-buggy
