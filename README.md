@@ -67,7 +67,7 @@ Write how many errors of each type Valgrind discovers in the above example code.
 8. Look at the **LEAK SUMMARY** section reported by Valgrind.
 	- Note that there are 7 blocks leaked in total categorized into: definitely lost, indirectly lost, and still reachable. Those 7 blocks correspond to the 7 nodes in the tree created by `leak.c`.
 	- On a piece of paper, draw a pictorial diagram of the tree. On the diagram, mark nodes that are definitely lost with the letter ‘`D`’, nodes that are indirectly lost with the letter ‘`I`’, and nodes that are still reachable with the letter ‘`S`’.
-	- Read Section 4.2.8 of the manual to get a description of each type of leak.
+	- Read Section 4.2.10 of the manual to get a description of each type of leak.
 
 9. Make modifications to `leak.c` to insert appropriate `free()` calls to remove all direct and indirect memory leaks. Once you are done, Valgrind should not display any errors when run.
 
